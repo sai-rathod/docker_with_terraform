@@ -1,0 +1,89 @@
+saii@ubuntu:~/docker_with_terraform$ terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following
+execution plan. Resource actions are indicated with the following
+symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # docker_container.my-con will be created
+  + resource "docker_container" "my-con" {
+      + attach                                      = false
+      + bridge                                      = (known after apply)
+      + command                                     = (known after apply)
+      + container_logs                              = (known after apply)
+      + container_read_refresh_timeout_milliseconds = 15000
+      + entrypoint                                  = (known after apply)
+      + env                                         = (known after apply)
+      + exit_code                                   = (known after apply)
+      + hostname                                    = (known after apply)
+      + id                                          = (known after apply)
+      + image                                       = (known after apply)
+      + init                                        = (known after apply)
+      + ipc_mode                                    = (known after apply)
+      + log_driver                                  = (known after apply)
+      + logs                                        = false
+      + must_run                                    = true
+      + name                                        = "react-con"
+      + network_data                                = (known after apply)
+      + network_mode                                = "bridge"
+      + read_only                                   = false
+      + remove_volumes                              = true
+      + restart                                     = "no"
+      + rm                                          = false
+      + runtime                                     = (known after apply)
+      + security_opts                               = (known after apply)
+      + shm_size                                    = (known after apply)
+      + start                                       = true
+      + stdin_open                                  = false
+      + stop_signal                                 = (known after apply)
+      + stop_timeout                                = (known after apply)
+      + tty                                         = false
+      + wait                                        = false
+      + wait_timeout                                = 60
+
+      + healthcheck (known after apply)
+
+      + labels (known after apply)
+
+      + ports {
+          + external = 3000
+          + internal = 3000
+          + ip       = "0.0.0.0"
+          + protocol = "tcp"
+        }
+    }
+
+  # docker_image.my-image will be created
+  + resource "docker_image" "my-image" {
+      + id          = (known after apply)
+      + image_id    = (known after apply)
+      + name        = "sairathod/new-app"
+      + repo_digest = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + app-available = "http://localhost:3000"
+docker_image.my-image: Creating...
+docker_image.my-image: Still creating... [00m09s elapsed]
+docker_image.my-image: Still creating... [00m19s elapsed]
+docker_image.my-image: Still creating... [00m29s elapsed]
+docker_image.my-image: Still creating... [00m38s elapsed]
+docker_image.my-image: Still creating... [00m48s elapsed]
+docker_image.my-image: Still creating... [00m58s elapsed]
+docker_image.my-image: Still creating... [01m07s elapsed]
+docker_image.my-image: Still creating... [01m17s elapsed]
+docker_image.my-image: Still creating... [01m27s elapsed]
+docker_image.my-image: Still creating... [01m37s elapsed]
+docker_image.my-image: Creation complete after 1m45s [id=sha256:38f46b46a0a5609b7e7f84441a4da62bad8e8353cb4e93dfb4a5648d0c8fd684sairathod/new-app]
+docker_container.my-con: Creating...
+docker_container.my-con: Creation complete after 1s [id=d1cce71cb5700c650cbee8648df53d3774e6c40f02c22e86eab821e65b40a045]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+app-available = "http://localhost:3000"
